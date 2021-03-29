@@ -1,3 +1,3 @@
 #1 SELECT * FROM `film` WHERE (genre_id=1 OR genre_id=2 OR genre_id=3) AND titre LIKE "%e"
 #2 SELECT titre, duree_min, resum FROM film
-#3 
+#3 SELECT LOWER(titre) AS "titres_min" FROM film WHERE id > 42 AND id < 84
