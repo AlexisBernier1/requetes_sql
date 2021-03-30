@@ -7,11 +7,11 @@
 #7 SELECT titre FROM film WHERE titre LIKE "%the%" AND genre_id=2
 #8 SELECT titre, date_debut_affiche, distrib_id, distrib.nom FROM film INNER JOIN distrib ON film.distrib_id=distrib.id WHERE distrib_id IS not NULL AND titre LIKE "%day%"
 #9
-#10
-#11
-#12
-#13
-#14
+#10 SELECT MIN(id) AS "min_id_film" FROM film WHERE genre_id=6
+#11 SELECT titre,date_debut_affiche, date_fin_affiche,datediff(date_fin_affiche,date_debut_affiche )*24 AS "temps_affiche" from film WHERE date_debut_affiche IS NOT NULL AND date_fin_affiche IS NOT NULL
+#12 SELECT MAX(abonnement.id) AS "nombre_abonnement", ROUND(AVG(prix)) AS "moyenne_abonnement",MAX(membre.id) AS "nombre_abonnees" FROM abonnement INNER JOIN membre ON abonnement.id=membre.abo_id
+#13 SELECT nom, pourcentage_reduc FROM reduction WHERE pourcentage_reduc>0 AND pourcentage_reduc !=25 ORDER BY pourcentage_reduc DESC
+#14 SELECT nom_salle FROM `salle` WHERE nbr_siege BETWEEN 100 AND 300 AND etage_salle =2
 #15
 #16
 #17
